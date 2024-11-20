@@ -22,7 +22,7 @@ public class CarController {
     }
 
     @GetMapping()
-    public String carsPage(@RequestParam(value = "count", required = false) Optional<Integer> count,
+    public String getCarsPage(@RequestParam(value = "count", required = false) Optional<Integer> count,
                            ModelMap model) {
         model.addAttribute("cars", carService.getCars(count.orElse(5)));
         return "cars";
